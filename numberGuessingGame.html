@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The number</title>
+    <style>
+        body{
+            background-color: #138D75;
+        }
+        .container{
+            
+            margin: auto;
+            text-align: center;
+            margin-top: 200px;
+            height: 300px;
+            width: 300px;
+        
+        }
+        #numberfield{
+            height: 28px;
+            width: 200px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        #submitBtn{
+            margin-top: 10px;
+            height: 25px;
+            color: white;
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="numberfield" placeholder="Guess a number between 1-5"> <br>
+        <button type="submit" id="submitBtn">SUBMIT</button>
+
+    </div>
+    <script>
+        
+        const subBtn = document.getElementById('submitBtn');
+        subBtn.addEventListener('click',function(){
+            const guessedNumber = document.getElementById('numberfield');
+            
+            let x = Math.floor((Math.random() * 5) + 1);
+            const num = guessedNumber.value;  
+            if( num == x){
+                alert("Congratulation You Guessed the right Number");
+            }
+            
+            else alert("Sorry! Try again");
+
+            guessedNumber.value = '';
+        })
+
+    </script>
+</body>
+</html>
